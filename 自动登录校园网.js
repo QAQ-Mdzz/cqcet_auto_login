@@ -18,20 +18,19 @@ var account = "";
 // 密码
 var password = "";
 
-
 window.onload = function () {
 
   xpath='//*[@id="div_sel"]/div[1]';
 
-  if (document.evaluate('//*[@id="username"]', document).iterateNext()) {
+  if (document.getElementById('username')) {
     //填入账号
-    document.evaluate('//*[@id="username"]', document).iterateNext().value = account;
+    document.getElementById('username').value = account;
 
     //填入密码
-    document.evaluate('//*[@id="password"]', document).iterateNext().value = password;
+    document.getElementById('password').value = password;
 
     //点击登录
-    document.evaluate('//*[@id="btn_login_1"]', document).iterateNext().click()
+    document.getElementById('btn_login_1').click()
   }
 
   //点击教育网
