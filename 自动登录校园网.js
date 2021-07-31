@@ -25,7 +25,7 @@ var password = "";
 $(function(){
   
   //修改教务系统头像
-  //$("#Frame0").contents().find("div.circle.zp").css("background-image","url(https://gitee.com/qaq-mdzz/picture/raw/master/head/qaq_lite.jpg)");
+  //$("#Frame0").contents().find("div.circle.zp").css("background-image","url()");
   
   
   xpath='//*[@id="div_sel"]/div[1]';
