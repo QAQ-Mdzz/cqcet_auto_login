@@ -16,21 +16,24 @@
 
 
 // 账号
-var account = "";
+var account = "1903010474";
 
 // 密码
-var password = "";
+var password = "13883818119XL";
 
 
 $(function(){
-  
+
   //修改教务系统头像
-  //$("#Frame0").contents().find("div.circle.zp").css("background-image","url()");
-  
-  
-  xpath='//*[@id="div_sel"]/div[1]';
-  
-  if (document.getElementById('username')) {
+  $("#Frame0").contents().find("div.circle.zp").css("background-image","url(https://gitee.com/qaq-mdzz/picUp/raw/master/Head/tjk_lite.jpg)");
+
+  // 删除弹窗
+  if(document.evaluate('//*[@id="layui-layer1"]', document).iterateNext()) {
+    document.evaluate('//*[@id="layui-layer1"]', document).iterateNext().remove();
+    document.evaluate('//*[@id="layui-layer-shade1"]', document).iterateNext().remove();
+  }
+
+  else if (document.getElementById('username')) {
     //填入账号
     document.getElementById('username').value = account;
 
@@ -38,12 +41,12 @@ $(function(){
     document.getElementById('password').value = password;
 
     //点击登录
-    document.getElementById('btn_login_1').click()
+    document.getElementById('passSubmit').click()
   }
 
-    //点击教育网
-  else if(document.evaluate(xpath, document).iterateNext()) {
-    document.evaluate(xpath, document).iterateNext().click();
+    //点击电信
+  else if(document.evaluate('//*[@id="div_sel"]/div[2]', document).iterateNext()) {
+    document.evaluate('//*[@id="div_sel"]/div[2]', document).iterateNext().click();
   }
 
   //网络繁忙
@@ -52,9 +55,10 @@ $(function(){
       location.replace("http://172.16.255.11");
     },2000);
   }
-  
+
   //点击外网
   else if(document.evaluate('//*[@id="m_教务系统"]/area[1]', document).iterateNext()) {
     document.evaluate('//*[@id="m_教务系统"]/area[1]', document).iterateNext().click();
   }
+
 })
