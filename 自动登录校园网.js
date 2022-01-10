@@ -16,10 +16,10 @@
 
 
 // 账号
-var account = "1903010474";
+var account = "";
 
 // 密码
-var password = "13883818119XL";
+var password = "";
 
 
 $(function(){
@@ -33,7 +33,7 @@ $(function(){
     document.evaluate('//*[@id="layui-layer-shade1"]', document).iterateNext().remove();
   }
 
-  else if (document.getElementById('username')) {
+  if (document.getElementById('username')) {
     //填入账号
     document.getElementById('username').value = account;
 
